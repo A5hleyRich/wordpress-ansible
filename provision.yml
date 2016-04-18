@@ -1,0 +1,16 @@
+---
+- hosts: production
+  user: root
+  vars:
+    username: ashley
+    password: $6$rlLdG6wd1CT8v7i$7psP8l26lmaPhT3cigoYYXhjG28CtD1ifILq9KzvA0W0TH2Hj4.iO43RkPWgJGIi60Mz0CsxWbRVBSQkAY95W0
+    public_key: ~/.ssh/id_rsa.pub
+  roles: 
+   - common
+   - ufw
+   - user
+   - ssh
+   - nginx
+   - php
+   - mariadb
+   - wp-cli

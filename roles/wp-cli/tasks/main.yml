@@ -1,0 +1,12 @@
+---
+- name: Install WP-CLI
+  get_url:
+    url: https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    dest: /usr/bin/wp
+    mode: 0755
+
+- name: Install WP-CLI tab completions
+  get_url:
+    url: https://raw.githubusercontent.com/wp-cli/wp-cli/master/utils/wp-completion.bash
+    dest: /etc/bash_completion.d
+    mode: 0644

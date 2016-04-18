@@ -1,0 +1,14 @@
+---
+- name: Upgrade packages
+  apt: upgrade=safe
+  
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+  - fail2ban
+  - git-core
+  - redis-server
+  - ufw
