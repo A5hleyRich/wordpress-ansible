@@ -1,0 +1,8 @@
+# Add hosts here, one per line. Additional groups can be created using
+# [group] syntax. Hosts can join multiple groups.
+
+[production]
+server_hostname1
+
+[staging]
+server_hostname2
