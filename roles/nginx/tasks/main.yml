@@ -41,4 +41,4 @@
     regexp: "^user"
     line: "user {{ username }};"
     state: present
-  notify: reload nginx 
+  notify: restart nginx
