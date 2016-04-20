@@ -9,8 +9,8 @@
    - common
    - ufw
    - user
-   - ssh
    - nginx
    - php
    - mariadb
    - wp-cli
+   - ssh
