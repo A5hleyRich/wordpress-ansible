@@ -20,3 +20,8 @@
     shell: /bin/bash
     update_password: always
     state: present
+
+- name: Add authorized key
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ lookup('file', public_key) }}"
