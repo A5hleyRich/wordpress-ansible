@@ -31,7 +31,7 @@
     regexp: "^user"
     line: "user = {{ username }}"
     state: present
-  notify: reload php
+  notify: restart php
 
 - name: Set PHP group    
   lineinfile: 
@@ -39,7 +39,7 @@
     regexp: "^group"
     line: "group = {{ username }}"
     state: present
-  notify: reload php 
+  notify: restart php
 
 - name: Set PHP listen owner    
   lineinfile: 
@@ -47,7 +47,7 @@
     regexp: "^listen\\.owner"
     line: "listen.owner = {{ username }}"
     state: present
-  notify: reload php 
+  notify: restart php
 
 - name: Set PHP listen group    
   lineinfile: 
@@ -55,7 +55,7 @@
     regexp: "^listen\\.group"
     line: "listen.group = {{ username }}"
     state: present
-  notify: reload php
+  notify: restart php
 
 - name: Set PHP upload max filesize    
   lineinfile: 
