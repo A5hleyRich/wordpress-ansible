@@ -1,15 +1,15 @@
 ---
 - name: start php
-  service: 
-    name: php7.0-fpm
+  service:
+    name: php7.4-fpm
     state: started
 
 - name: reload php
   service:
-    name: php7.0-fpm
+    name: php7.4-fpm
     state: reloaded
 
 - name: restart php
   service:
-    name: php7.0-fpm
+    name: php7.4-fpm
     state: restarted

@@ -10,65 +10,67 @@
     force: yes
     update_cache: yes
   with_items:
-  - php7.0-cli
-  - php7.0-common
-  - php7.0-curl
-  - php7.0-dev
-  - php7.0-fpm
-  - php7.0-gd
-  - php7.0-mbstring
-  - php7.0-mcrypt
-  - php7.0-mysql
-  - php7.0-opcache
-  - php7.0-xml
-  - php7.0-xmlrpc
-  - php7.0-zip
-  - php-redis
+  - "php7.4-bcmath"
+  - "php7.4-cli"
+  - "php7.4-common"
+  - "php7.4-curl"
+  - "php7.4-fpm"
+  - "php7.4-gd"
+  - "php7.4-igbinary"
+  - "php7.4-imagick"
+  - "php7.4-mbstring"
+  - "php7.4-mysql"
+  - "php7.4-opcache"
+  - "php7.4-redis"
+  - "php7.4-soap"
+  - "php7.4-xml"
+  - "php7.4-xmlrpc"
+  - "php7.4-zip"
 
 - name: Set PHP user
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/pool.d/www.conf
+  lineinfile:
+    dest: /etc/php/7.4/fpm/pool.d/www.conf
     regexp: "^user"
     line: "user = {{ username }}"
     state: present
   notify: restart php
 
-- name: Set PHP group    
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/pool.d/www.conf
+- name: Set PHP group
+  lineinfile:
+    dest: /etc/php/7.4/fpm/pool.d/www.conf
     regexp: "^group"
     line: "group = {{ username }}"
     state: present
   notify: restart php
 
-- name: Set PHP listen owner    
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/pool.d/www.conf
+- name: Set PHP listen owner
+  lineinfile:
+    dest: /etc/php/7.4/fpm/pool.d/www.conf
     regexp: "^listen\\.owner"
     line: "listen.owner = {{ username }}"
     state: present
   notify: restart php
 
-- name: Set PHP listen group    
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/pool.d/www.conf
+- name: Set PHP listen group
+  lineinfile:
+    dest: /etc/php/7.4/fpm/pool.d/www.conf
     regexp: "^listen\\.group"
     line: "listen.group = {{ username }}"
     state: present
   notify: restart php
 
-- name: Set PHP upload max filesize    
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/php.ini
+- name: Set PHP upload max filesize
+  lineinfile:
+    dest: /etc/php/7.4/fpm/php.ini
     regexp: "^upload_max_filesize"
     line: "upload_max_filesize = 128M"
     state: present
   notify: reload php
 
-- name: Set PHP post max filesize    
-  lineinfile: 
-    dest: /etc/php/7.0/fpm/php.ini
+- name: Set PHP post max filesize
+  lineinfile:
+    dest: /etc/php/7.4/fpm/php.ini
     regexp: "^post_max_size"
     line: "post_max_size = 128M"
     state: present
-  notify: reload php  
+  notify: reload php
