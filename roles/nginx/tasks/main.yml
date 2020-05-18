@@ -1,7 +1,7 @@
 ---
 - name: Add Nginx repo
   apt_repository:
-    repo: ppa:nginx/development
+    repo: ppa:ondrej/nginx
 
 - name: Install Nginx
   apt:
@@ -29,14 +29,14 @@
   when: not git_exists.stat.exists
 
 - name: Symlink default site
-  file: 
+  file:
     src: /etc/nginx/sites-available/default
     dest: /etc/nginx/sites-enabled/default
     state: link
-  notify: reload nginx    
+  notify: reload nginx
 
 - name: Set Nginx user
-  lineinfile: 
+  lineinfile:
     dest: /etc/nginx/nginx.conf
     regexp: "^user"
     line: "user {{ username }};"
