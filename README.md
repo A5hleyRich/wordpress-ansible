@@ -1,6 +1,6 @@
 # WordPress Ansible
 
-This repository contains a playbook for provisioning modern hosting environments geared towards WordPress. It's based on [Hosting WordPress Yourself](https://deliciousbrains.com/hosting-wordpress-setup-secure-virtual-server/) and [WordPress Nginx](https://github.com/A5hleyRich/wordpress-nginx). The following is handled out of the box:
+This repository contains a playbook for provisioning modern hosting environments geared towards WordPress. It's based on [How to Install WordPress on Ubuntu 18.04](https://deliciousbrains.com/hosting-wordpress-setup-secure-virtual-server/) and [WordPress Nginx](https://github.com/A5hleyRich/wordpress-nginx). The following is handled out of the box:
 
 * User setup
 * SSH hardening
@@ -9,7 +9,7 @@ This repository contains a playbook for provisioning modern hosting environments
 It will also install the following software:
 
 * Nginx with HTTP/2 and [improved default configs](https://github.com/A5hleyRich/wordpress-nginx)
-* PHP 7
+* PHP 7.4
 * MariaDB
 * Redis
 * WP-CLI
