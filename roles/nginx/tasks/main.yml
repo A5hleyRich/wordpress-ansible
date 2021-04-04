@@ -24,7 +24,7 @@
   git:
     repo: https://github.com/A5hleyRich/wordpress-nginx.git
     dest: /etc/nginx
-    version: master
+    version: main
     force: yes
   when: not git_exists.stat.exists
 
